@@ -1,0 +1,52 @@
+GET http://localhost:7000/Customers
+
+###
+GET http://localhost:7000/Customers/2
+
+###
+POST http://localhost:7000/Customers
+Content-Type: application/json
+
+{
+    "name": "Xiao Ming He",
+    "phone": "+6555677821",
+    "email": "xiaominghe@hotmail.com",
+    "address": "urban no 23 jason, SINGAPORE"
+}
+
+###
+PATCH http://localhost:7000/Customers/1
+Content-Type: application/json
+
+{
+    "name": "Xiao Tai lung",
+    "phone": "+6556978321",
+    "email": "xiaotailung@hotmail.com",
+    "address": "Sargon revenue 199 Merry, SINGAPORE"
+}
+
+###
+GET http://localhost:7000/Product
+
+###
+GET http://localhost:7000/Product/1
+
+###
+POST http://localhost:7000/Product
+Content-Type: application/json
+
+{
+    "name": "Gucci 122",
+    "price": "20000",
+    "unit": "200"
+}
+
+###
+PATCH http://localhost:7000/Product/1
+Content-Type: application/json
+
+{
+    "name" : "Gucci 542",
+    "price" : "210000",
+    "unit" : "159"
+}
