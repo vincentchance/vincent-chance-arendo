@@ -1,10 +1,11 @@
 import {Sequelize} from "sequelize";
 
-//untuk customer table
+//inisiasi data
 
 const db = new Sequelize('customer_db','root','',{
 	host: 'localhost',
-	dialect: 'mysql'
+	dialect: 'mysql',
+	port:'3308' //kalo portnya normal/3306 bisa dihapus
 });
 
 export default db;
