@@ -1,9 +1,9 @@
 import {Sequelize} from "sequelize";
-import db1 from "../config/database.js";
+import db from "../config/database.js";
 
 const {DataTypes} = Sequelize;
 
-const Product = db1.define('product',{
+const Product = db.define('product',{
 	name: DataTypes.STRING,
 	unit: DataTypes.INTEGER,
 	price: DataTypes.INTEGER
@@ -14,5 +14,5 @@ const Product = db1.define('product',{
 export default Product;
 
 (async()=>{
-	await db1.sync();
+	await db.sync(); 
 })();
