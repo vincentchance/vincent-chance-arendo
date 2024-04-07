@@ -7,3 +7,4 @@ Api
 - open data with vscode or open cmd in your document search path where is the api is located.
 - write node index.js and enter with your console.
 - rest api is recommended if you want to test the api in your vscode.
+- note: it should be working properly.
