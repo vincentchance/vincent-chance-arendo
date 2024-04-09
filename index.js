@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import CustomerRoutes from "./routes/CustomerRoutes.js";
+import ProductRoutes from "./routes/ProductRoutes.js";
 import orderRoutes from "./routes/orderRoutes.js";
 
 
