@@ -3,7 +3,7 @@ import {
 	createOrderItem,
 	getOrderItem,
 	getOrderItemById
-} from "../controller/order-controller.js";
+} from "../controller/order-item-controller.js";
 
 const router = express.Router();
 
