@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 app.use(CustomerRoutes);
 app.use(ProductRoutes);
-app.use(orderRoutes);
+app.use(orderItemRoutes);
 
 
 app.listen(7000,() => console.log('Server up and running...'));
