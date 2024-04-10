@@ -13,11 +13,27 @@ export const createOrderItem = async(req, res) => {
 	}
 }
 
-export const getOrderItem = async(req, res) =>{
+export const getOrderItem = async(req, res) => {
 	try {
-		const response = await OrderItem.findAll();
+		const response = await OrderItem.findAll({
+		include: [{ model: Product
+		}]
+	});
 		res.status(200).json(response);
 	} catch(error){
-	console.log(error.message);
+		console.log(error.message);
 	}
+}
+
+export const getOrderItemById = async(req, res) =>{
+	try{
+		const response = await OrderItem.findOne({
+			where:{
+				id: req.params.id
+			}
+		});
+		res.status(200).json(response);
+} catch(error){
+	console.log(error.message);
+}
 }
