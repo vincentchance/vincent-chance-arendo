@@ -15,7 +15,8 @@ export const createOrderItem = async(req, res) => {
 export const getOrderItem = async(req, res) => {
 	try {
 		const response = await OrderItem.findAll({
-		include: [{ model: Product
+		include: [{ model: Product,
+                attributes: ['name', 'price']
 		}]
 	});
 		res.status(200).json(response);
@@ -29,7 +30,10 @@ export const getOrderItemById = async(req, res) =>{
 		const response = await OrderItem.findOne({
 			where:{
 				id: req.params.id
-			}
+			},
+			include: [{ model: Product, 
+			attributes: ['name', 'price']
+			}]
 		});
 		res.status(200).json(response);
 } catch(error){
