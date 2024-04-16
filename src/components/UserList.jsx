@@ -42,3 +42,5 @@ const getCustomers = async () =>{
     </div>
   )
 }
+
+export default UserList;
