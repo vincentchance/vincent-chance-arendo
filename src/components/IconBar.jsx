@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {IconButton, Menu, MenuItem} from '@mui/material'
+import {IconButton, Menu, MenuItem} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 
 const IconBar = () => {
