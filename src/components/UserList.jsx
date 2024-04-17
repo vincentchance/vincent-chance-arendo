@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from "axios";
+import { Link } from 'react-router-dom';
 
 const UserList = () => {
 const [customers, setCustomers] = useState([]);
@@ -12,11 +13,11 @@ const getCustomers = async () =>{
     const response = await axios.get('http://localhost:5000/customers');
     setCustomers(response.data);
 }
-
   return (
     <div className="columns mt-5 is-centered">
         <div className="column is-half">
-            <table className='table is-striped is-fullwidth'>
+            <Link to={`/add`} className="button is-success">Add New</Link>
+            <table className="table is-striped is-fullwidth">
                 <thead>
                     <tr>
                         <th>Customer Name</th>
@@ -29,11 +30,13 @@ const getCustomers = async () =>{
                 <tbody>
                     {customers.map((customer)=>(
                     <tr key={customer.id}>
-                        <th>{customer.name}</th>
-                        <th>{customer.phone}</th>
-                        <th>{customer.email}</th>
-                        <th>{customer.address}</th>
-                        <th></th>
+                        <td>{customer.name}</td>
+                        <td>{customer.phone}</td>
+                        <td>{customer.email}</td>
+                        <td>{customer.address}</td>
+                        <td><Link to={`edit/${customer.id}`}className='button is-small is-info'>Edit</Link>
+                        <button className='button is-small is-danger'>Delete</button>
+                        </td>
                     </tr>
                 ))}
                     </tbody>
