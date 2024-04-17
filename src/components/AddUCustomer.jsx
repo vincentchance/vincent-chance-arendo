@@ -1,16 +1,16 @@
-iimport React, {useState} from 'react';
+import React, {useState} from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 
-const AddUser = () => {
+const AddCustomer = () => {
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
     const [address, setAddress] = useState("");
     const navigate = useNavigate();
     
-    const saveUser = async (e) => {
+    const saveCustomer = async (e) => {
         e.preventDefault();
         try {
             await axios.post('http://localhost:5000/customers',{
@@ -28,7 +28,7 @@ const AddUser = () => {
 
     <div className="columns mt-5 is-centered">
         <div className="column is-half">
-            <form onSubmit={saveUser}>
+            <form onSubmit={saveCustomer}>
                 <div className="field">
                     <label className="label">Name</label>
                         <div className="control">
@@ -78,4 +78,4 @@ const AddUser = () => {
   )
 }
 
-export default AddUser;
+export default AddCustomer;
