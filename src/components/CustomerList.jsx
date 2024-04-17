@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import axios from "axios";
 import { Link } from 'react-router-dom';
 
-const UserList = () => {
+const CustomerList = () => {
 const [customers, setCustomers] = useState([]);
 
 useEffect(() => {
@@ -54,5 +54,5 @@ const deleteCustomers = async(id) => {
     </div>
   )
 }
-
+export default CustomerList;
 export default UserList;
