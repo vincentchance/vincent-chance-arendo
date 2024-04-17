@@ -54,5 +54,5 @@ const deleteCustomers = async(id) => {
     </div>
   )
 }
+
 export default CustomerList;
-export default UserList;
