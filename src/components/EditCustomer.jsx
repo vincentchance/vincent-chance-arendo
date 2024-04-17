@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 
 
-const EditUser = () => {
+const EditCustomer = () => {
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
@@ -12,10 +12,10 @@ const EditUser = () => {
     const {id} = useParams();
 
     useEffect(()=>{
-        getUserById();
+        getCustomerById();
     },[]);
     
-    const updateUser = async (e) => {
+    const updateCustomer = async (e) => {
         e.preventDefault();
         try {
             await axios.patch(`http://localhost:5000/customers/${id}`,{
@@ -30,7 +30,7 @@ const EditUser = () => {
         }
     };
 
-    const getUserById = async() => {
+    const getCustomerById = async() => {
         const response = await axios.get(`http://localhost:5000/customers/${id}`);
         setName(response.data.name);
         setPhone(response.data.phone);
@@ -41,7 +41,7 @@ const EditUser = () => {
 
     <div className="columns mt-5 is-centered">
         <div className="column is-half">
-            <form onSubmit={updateUser}>
+            <form onSubmit={updateCustomer}>
                 <div className="field">
                     <label className="label">Name</label>
                         <div className="control">
@@ -91,4 +91,4 @@ const EditUser = () => {
   )
 }
 
-export default EditUser;
+export default EditCustomer;
